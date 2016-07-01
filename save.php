@@ -28,7 +28,7 @@ require('../../config.php');
 $update_when_modified = true;
 require(WB_PATH.'/modules/admin.php');
 // Include WB functions file
-require_once(WB_PATH.'/framework/functions.php');
+require_once(WB_PATH.'/framework/summary.functions.php');
 
 
 $success = true;
@@ -192,8 +192,8 @@ else
 		$resize         = $rec["resize"];
 	} 
 	
-  $short = $admin->add_slashes($admin->get_post('short'));
-  $long = $admin->add_slashes($admin->get_post('long'));
+  $short = addslashes($admin->get_post('short'));
+  $long = addslashes($admin->get_post('long'));
   
   if (isset($SaveAsNew)) 
    $cal_id=0;

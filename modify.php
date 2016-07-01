@@ -24,7 +24,7 @@
 if (!defined('WB_PATH')) exit("Cannot access this file directly");
 
 
-require_once(WB_PATH.'/framework/functions.php');
+require_once(WB_PATH.'/framework/summary.functions.php');
 require_once('functions.php');
 
 $month=date("n");
