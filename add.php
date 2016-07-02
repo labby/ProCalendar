@@ -21,7 +21,7 @@
 
 */
 
-if (!defined('WB_PATH')) exit("Cannot access this file directly");
+if (!defined('LEPTON_PATH')) exit("Cannot access this file directly");
 
 
 $ct1 = '<div class="field_line">

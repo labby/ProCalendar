@@ -21,10 +21,10 @@
 
 */
 
-if (!defined('WB_PATH')) exit("Cannot access this file directly");
+if (!defined('LEPTON_PATH')) exit("Cannot access this file directly");
 
 
-require_once(WB_PATH.'/framework/summary.functions.php');
+require_once(LEPTON_PATH.'/framework/summary.functions.php');
 require_once('functions.php');
 
 $month=date("n");
@@ -74,13 +74,13 @@ $action_types = fillActionTypes($section_id);
 
   if(!isset($wysiwyg_editor_loaded)) {
     $wysiwyg_editor_loaded=true;  
-    if (!defined('WYSIWYG_EDITOR') OR WYSIWYG_EDITOR=="none" OR !file_exists(WB_PATH.'/modules/'.WYSIWYG_EDITOR.'/include.php')) {
+    if (!defined('WYSIWYG_EDITOR') OR WYSIWYG_EDITOR=="none" OR !file_exists(LEPTON_PATH.'/modules/'.WYSIWYG_EDITOR.'/include.php')) {
       function show_wysiwyg_editor($name,$id,$content,$width,$height) {
         echo '<textarea name="'.$name.'" id="'.$id.'" style="width: '.$width.'; height: '.$height.';">'.$content.'</textarea>';
       }
     } else {
       $id_list=array("short","long");
-      require(WB_PATH.'/modules/'.WYSIWYG_EDITOR.'/include.php');
+      require(LEPTON_PATH.'/modules/'.WYSIWYG_EDITOR.'/include.php');
     }
   }
 ?>

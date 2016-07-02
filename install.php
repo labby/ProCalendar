@@ -22,7 +22,7 @@
 */
 
 
-if (defined('WB_URL')) {
+if (defined('LEPTON_URL')) {
   
   $database->query("DROP TABLE IF EXISTS ".TABLE_PREFIX."mod_procalendar_settings");
   $database->query("DROP TABLE IF EXISTS ".TABLE_PREFIX."mod_procalendar_actions");
@@ -137,7 +137,7 @@ if (defined('WB_URL')) {
   $database->query("INSERT INTO ".TABLE_PREFIX."mod_procalendar_actions (page_id,section_id) VALUES ('0','0')");
   
   // Make calendar images directory
-  make_dir(WB_PATH.MEDIA_DIRECTORY.'/calendar/');  
+  make_dir(LEPTON_PATH.MEDIA_DIRECTORY.'/calendar/');  
 }
 
 

@@ -24,17 +24,17 @@
 require('../../config.php');
 
 // Include WB admin wrapper script
-require(WB_PATH.'/modules/admin.php');
+require(LEPTON_PATH.'/modules/admin.php');
 
 // include core functions of WB 2.7 to edit the optional module CSS files (frontend.css, backend.css)
-@include_once(WB_PATH .'/framework/summary.module_edit_css.php');
+@include_once(LEPTON_PATH .'/framework/summary.module_edit_css.php');
 
 
 if (LANGUAGE_LOADED) {        // load languagepack
-  if(file_exists(WB_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {    // if exist proper language mutation
-    require_once(WB_PATH."/modules/procalendar/languages/".LANGUAGE.".php");    // load it
+  if(file_exists(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {    // if exist proper language mutation
+    require_once(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php");    // load it
   } else {
-    require_once(WB_PATH."/modules/procalendar/languages/EN.php");        // else use english
+    require_once(LEPTON_PATH."/modules/procalendar/languages/EN.php");        // else use english
   }
 }
 $fillvalue = "";
@@ -66,7 +66,7 @@ if ($db->numRows() > 0) {
 <table cellpadding="0" cellspacing="0" border="0" width="99%">      
     <tr>
       <td width="70%" valign="top">
-        <form name="modify_startday" method="post" action="<?php echo WB_URL; ?>/modules/procalendar/save_settings.php">
+        <form name="modify_startday" method="post" action="<?php echo LEPTON_URL; ?>/modules/procalendar/save_settings.php">
           <input type="hidden" name="page_id" value="<?php echo $page_id; ?>">
           <input type="hidden" name="section_id" value="<?php echo $section_id; ?>">
           <input type="hidden" name="type" value="startd">
@@ -149,12 +149,12 @@ if ($db->numRows() > 0) {
             <tr>
                 <td valign="top">
                     <input type="button" value="<?php echo $CALTEXT['CUSTOMS']; ?>" class="edit_button" 
-                    onclick="window.location='<?php echo WB_URL; ?>/modules/procalendar/modify_customs.php?page_id=<?php echo $page_id; ?>&amp;section_id=<?php echo $section_id; ?>'">
+                    onclick="window.location='<?php echo LEPTON_URL; ?>/modules/procalendar/modify_customs.php?page_id=<?php echo $page_id; ?>&amp;section_id=<?php echo $section_id; ?>'">
                     </input>
                 </td>
                 <td valign="top">
                     <input type="button" value="<?php echo $TEXT['TEMPLATE']; ?>" class="edit_button" 
-                    onclick="window.location='<?php echo WB_URL; ?>/modules/procalendar/modify_layout.php?page_id=<?php echo $page_id; ?>&amp;section_id=<?php echo $section_id; ?>'">
+                    onclick="window.location='<?php echo LEPTON_URL; ?>/modules/procalendar/modify_layout.php?page_id=<?php echo $page_id; ?>&amp;section_id=<?php echo $section_id; ?>'">
                     </input>
                 </td>
                 <td valign="top">
@@ -172,10 +172,10 @@ if ($db->numRows() > 0) {
                     <h2><?php echo $CALTEXT['SUPPORT_INFO']; ?></h2>
                     <?php echo $CALTEXT['SUPPORT_INFO_INTRO']; ?>
                     <a href="<?php if (LANGUAGE_LOADED) { 
-								if(file_exists(WB_PATH."/modules/procalendar/languages/support-".LANGUAGE.".php")) {  
-								echo(WB_URL."/modules/procalendar/languages/support-".LANGUAGE.".php?page_id=$page_id&amp;section_id=$section_id");   
+								if(file_exists(LEPTON_PATH."/modules/procalendar/languages/support-".LANGUAGE.".php")) {  
+								echo(LEPTON_URL."/modules/procalendar/languages/support-".LANGUAGE.".php?page_id=$page_id&amp;section_id=$section_id");   
 							} else {
-								echo(WB_URL."/modules/procalendar/languages/support-EN.php?page_id=$page_id&amp;section_id=$section_id"); 
+								echo(LEPTON_URL."/modules/procalendar/languages/support-EN.php?page_id=$page_id&amp;section_id=$section_id"); 
 							}
 						} 					
 						?>">
@@ -189,7 +189,7 @@ if ($db->numRows() > 0) {
 
 <br /><br />
 
-<form name="modify_eventgroup" method="post" action="<?php echo WB_URL; ?>/modules/procalendar/save_settings.php">
+<form name="modify_eventgroup" method="post" action="<?php echo LEPTON_URL; ?>/modules/procalendar/save_settings.php">
   <input type="hidden" name="page_id" value="<?php echo $page_id; ?>">
   <input type="hidden" name="section_id" value="<?php echo $section_id; ?>">
   <input type="hidden" name="type" value="change_eventgroup">
@@ -199,7 +199,7 @@ if ($db->numRows() > 0) {
     </tr>
     <tr>
       <td>
-          <select class="edit_select_short" name="group_id" onchange="document.location.href='<?php echo WB_URL."/modules/procalendar/modify_settings.php?page_id=$page_id&amp;section_id=$section_id&amp;group_id="?>'+this.value">
+          <select class="edit_select_short" name="group_id" onchange="document.location.href='<?php echo LEPTON_URL."/modules/procalendar/modify_settings.php?page_id=$page_id&amp;section_id=$section_id&amp;group_id="?>'+this.value">
               <option value="0"><?php echo $CALTEXT['CHOOSE-CATEGORY']; ?></option>
               <?php
 		  $sql = "SELECT * FROM ".TABLE_PREFIX."mod_procalendar_eventgroups WHERE section_id=$section_id ORDER BY name ASC ";

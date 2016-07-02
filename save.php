@@ -26,9 +26,9 @@ if (!isset($_POST['cal_id'])) exit("Cannot access this file directly");
 require('../../config.php');
 
 $update_when_modified = true;
-require(WB_PATH.'/modules/admin.php');
+require(LEPTON_PATH.'/modules/admin.php');
 // Include WB functions file
-require_once(WB_PATH.'/framework/summary.functions.php');
+require_once(LEPTON_PATH.'/framework/summary.functions.php');
 
 
 $success = true;
@@ -212,8 +212,8 @@ else
     {
   	  // Get real filename and set new filename
 	  $filename = $_FILES[$checkname]['name'];
-	  $new_filename = WB_PATH.MEDIA_DIRECTORY.'/calendar/'.$filename;
-	  $st_filename =  WB_URL.MEDIA_DIRECTORY.'/calendar/'.$filename;
+	  $new_filename = LEPTON_PATH.MEDIA_DIRECTORY.'/calendar/'.$filename;
+	  $st_filename =  LEPTON_URL.MEDIA_DIRECTORY.'/calendar/'.$filename;
 	  // Make kinda sure the image is an image - there should be something better then just to test extention
 	  $file4=strtolower(substr($filename, -4, 4));
 	  if(($file4 != '.jpg')and($file4 != '.png')and($file4 !='jpeg') )
@@ -221,14 +221,14 @@ else
 		$admin->print_error($MESSAGE['GENERIC']['FILE_TYPE'].' JPG (JPEG) or PNG a');
 	  }
 	  // Make sure the target directory exists
-	  make_dir(WB_PATH.MEDIA_DIRECTORY.'/calendar');
+	  make_dir(LEPTON_PATH.MEDIA_DIRECTORY.'/calendar');
 	  // Upload image
 	  move_uploaded_file($_FILES[$checkname]['tmp_name'], $new_filename);
 	  // Check if we need to create a thumb
 	  if($resize != 0)
       {
 		// Resize the image
-		$thumb_location = WB_PATH.MEDIA_DIRECTORY.'/calendar/thumb'.$filename.'.jpg';
+		$thumb_location = LEPTON_PATH.MEDIA_DIRECTORY.'/calendar/thumb'.$filename.'.jpg';
 		if(make_thumb($new_filename, $thumb_location, $resize))
         {
 			// Delete the actual image and replace with the resized version

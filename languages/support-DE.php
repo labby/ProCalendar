@@ -26,13 +26,13 @@
 require('../../../config.php');
 
 // Include WB admin wrapper script
-require(WB_PATH.'/modules/admin.php');
+require(LEPTON_PATH.'/modules/admin.php');
 
 if (LANGUAGE_LOADED) {        // load languagepack
-  if(file_exists(WB_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {    // if exist proper language mutation
-    require_once(WB_PATH."/modules/procalendar/languages/".LANGUAGE.".php");    // load it
+  if(file_exists(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {    // if exist proper language mutation
+    require_once(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php");    // load it
   } else {
-    require_once(WB_PATH."/modules/procalendar/languages/EN.php");        // else use english
+    require_once(LEPTON_PATH."/modules/procalendar/languages/EN.php");        // else use english
   }
 }
 
@@ -87,7 +87,7 @@ if (LANGUAGE_LOADED) {        // load languagepack
 <p>Wie viele andere WebsiteBaker-Module k&ouml;nnen auch beim ProCalendar die Stylesheets f&uuml;r Frontend und Backend angepasst werden. Das setzt allerdings voraus, dass die CSS-Dateien beschreibbar sind, sonst k&ouml;nnen die &Auml;nderungen nicht gespeichert werden.</p>
 
 <br />
-<input type="button" class="edit_button" value="<?php echo $CALTEXT['BACK']; ?>" onclick="javascript: window.location = '<?php echo WB_URL."/modules/procalendar/modify_settings.php?page_id=$page_id&amp;section_id=$section_id"; ?>';" />
+<input type="button" class="edit_button" value="<?php echo $CALTEXT['BACK']; ?>" onclick="javascript: window.location = '<?php echo LEPTON_URL."/modules/procalendar/modify_settings.php?page_id=$page_id&amp;section_id=$section_id"; ?>';" />
 <?php
 $admin->print_footer();
 ?>

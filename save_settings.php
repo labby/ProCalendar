@@ -24,7 +24,7 @@
 require('../../config.php');
 
 // Include WB admin wrapper script
-require(WB_PATH.'/modules/admin.php');
+require(LEPTON_PATH.'/modules/admin.php');
 
 $type         = $admin->get_post('type');
 $page_id      = $admin->get_post('page_id');
@@ -142,7 +142,7 @@ if($database->is_error()) {
   $admin->print_error($database->get_error(), $js_back);
 } else {
 	if ($type == "change_eventgroup" ) { 
-	  $admin->print_success($TEXT['SUCCESS'], WB_URL."/modules/procalendar/modify_settings.php?page_id=".$page_id."&section_id=".$section_id);
+	  $admin->print_success($TEXT['SUCCESS'], LEPTON_URL."/modules/procalendar/modify_settings.php?page_id=".$page_id."&section_id=".$section_id);
 	} else {
 	  $admin->print_success($MESSAGE['PAGES']['SAVED'], ADMIN_URL.'/pages/modify.php?page_id='.$page_id);
 	}

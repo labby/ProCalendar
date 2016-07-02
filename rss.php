@@ -22,7 +22,7 @@ $month2 = $month;
 
 // Include WB files
 require_once('../../config.php');
-require_once(WB_PATH.'/framework/class.frontend.php');
+require_once(LEPTON_PATH.'/framework/class.frontend.php');
 
 $wb = new frontend();
 $wb->page_id = $page_id;

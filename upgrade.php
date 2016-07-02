@@ -9,7 +9,7 @@
 */
 
 // Must include code to stop this file being access directly
-if(defined('WB_PATH') == false) { exit("Cannot access this file directly"); }
+if(defined('LEPTON_PATH') == false) { exit("Cannot access this file directly"); }
 
 echo '<div class="info"><B>Updating database for module: procalendar</B></div>';
 

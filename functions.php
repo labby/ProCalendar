@@ -22,10 +22,10 @@
 */
 
 if (LANGUAGE_LOADED) {
-  if(file_exists(WB_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {
-    require_once(WB_PATH."/modules/procalendar/languages/".LANGUAGE.".php");
+  if(file_exists(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {
+    require_once(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php");
   } else {
-    require_once(WB_PATH."/modules/procalendar/languages/EN.php");
+    require_once(LEPTON_PATH."/modules/procalendar/languages/EN.php");
   }
 }
 
@@ -248,8 +248,8 @@ function ShowCalendar
   
   $dayscount = DaysCount($month, $year); 
   $firstday  = FirstDay($month,$year);
-  //$previmg   = WB_URL."/modules/procalendar/prev.png";
-  //$nextimg   = WB_URL."/modules/procalendar/next.png";
+  //$previmg   = LEPTON_URL."/modules/procalendar/prev.png";
+  //$nextimg   = LEPTON_URL."/modules/procalendar/next.png";
 
   $output = '<div class="show_calendar">'; 
   $output .= '<table border="0" cellpadding="0" cellspacing="0" class="calendarmod" >';
@@ -262,8 +262,8 @@ function ShowCalendar
   $output .= ' </tr>';
 
   // ShowTermineDebug($month, $year, $actions);
-  if (glob(WB_PATH."/modules/procalendar/images/*.png") !== false)
-	  foreach (glob(WB_PATH."/modules/procalendar/images/*.png") as $filename) {
+  if (glob(LEPTON_PATH."/modules/procalendar/images/*.png") !== false)
+	  foreach (glob(LEPTON_PATH."/modules/procalendar/images/*.png") as $filename) {
 			unlink($filename);
 		};
 	$this_day = (intval($month) == date('n') && intval($year) == date('Y')) ? date('j') : 0;
@@ -323,7 +323,7 @@ function ShowCalendar
         	  $style = "";
         		if (count($colors)) {      	  	  	
         	  	createBackground($colors, $bgName);
-        	  	$style = 'style="background-image: url('.WB_URL.'/modules/procalendar/images/'.$bgName.'.png);background-position: bottom;background-repeat:repeat-x"';
+        	  	$style = 'style="background-image: url('.LEPTON_URL.'/modules/procalendar/images/'.$bgName.'.png);background-position: bottom;background-repeat:repeat-x"';
         		}
         		
         	  $output .="<td class='calendar_markday".$procal_today."' id='acttype".$tmp["acttype"]."' ".$style.">";
@@ -392,8 +392,8 @@ global $database, $admin, $wb;
 $colcount  = ColsCount($month,$year);
 $dayscount = DaysCount($month, $year); 
 $firstday  = FirstDay($month,$year);
-//$previmg   = WB_URL."/modules/procalendar/prev.gif";
-//$nextimg   = WB_URL."/modules/procalendar/next.gif";
+//$previmg   = LEPTON_URL."/modules/procalendar/prev.gif";
+//$nextimg   = LEPTON_URL."/modules/procalendar/next.gif";
 $IsMonthOverview = (strlen($day) > 0) ? 0 : 1;
 $today = date("Y-m-d");
 
@@ -1120,7 +1120,7 @@ if ($db->numRows() > 0) {
    }
 }
   	
-  //$previmg   = WB_URL."/modules/procalendar/prev.png";
+  //$previmg   = LEPTON_URL."/modules/procalendar/prev.png";
   // echo "<a class=\"go_back\" href=\"javascript:history.back()\" >&laquo; " . $CALTEXT['BACK'] . "</a>"; 
 
   $ds = $tmp['date_start']." ".substr($tmp['time_start'],0,5);
@@ -1282,7 +1282,7 @@ function createBackground($colors, $day)
   	ImageFilledRectangle($img, $i*$width/$count, 0, ($i+1)*$width/$count, $height, ${'color'.$i});	
   }
 
-	ImagePNG($img, WB_PATH."/modules/procalendar/images/".$day.".png"); 
+	ImagePNG($img, LEPTON_PATH."/modules/procalendar/images/".$day.".png"); 
 	ImageDestroy($img);
 
 };
@@ -1416,10 +1416,10 @@ function select_image($title,$name,$name_img,$image,$img_text,$img_text2) {
   echo '  <div class="field_title">'.$img_text.'</div>';
   echo '  <select name="'.$name.'" size="1" style="width:410px;">';
   echo '    <option value="0" >'.$img_text2.'</option>';
-  if ($handle = opendir(WB_PATH.MEDIA_DIRECTORY.'/calendar')) {
+  if ($handle = opendir(LEPTON_PATH.MEDIA_DIRECTORY.'/calendar')) {
     while (false !== ($file = readdir($handle))) {
 	  if ($file != "." && $file != "..") {
-	    echo '<option value="'.WB_URL.MEDIA_DIRECTORY.'/calendar/'.$file.'"';
+	    echo '<option value="'.LEPTON_URL.MEDIA_DIRECTORY.'/calendar/'.$file.'"';
 		if (strpos($image,$file)) echo ' selected="selected"';
 		  echo '>'.$file.'</option>';
 	  }
@@ -1578,7 +1578,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
 ?>
    
 <div class="event_details">
-  <form name="editcalendar" action="<?php echo WB_URL; ?>/modules/procalendar/save.php" method="post" enctype="multipart/form-data">
+  <form name="editcalendar" action="<?php echo LEPTON_URL; ?>/modules/procalendar/save.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="cal_id" value="<?php echo $cal_id; ?>"> </input>
     <input type="hidden" name="page_id" value="<?php echo $page_id; ?>"> </input>
     <input type="hidden" name="section_id" value="<?php echo $section_id; ?>"> </input>
@@ -1589,7 +1589,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
       <?php
       $url = ADMIN_URL."/pages/modify.php?page_id=$page_id&amp;edit=new";
       ?>
-      <input type="button" value="<?php echo $CALTEXT['SETTINGS']; ?>" class="edit_button float_right" onclick="window.location='<?php echo WB_URL; ?>/modules/procalendar/modify_settings.php?page_id=<?php echo $page_id; ?>&amp;section_id=<?php echo $section_id; ?>'">
+      <input type="button" value="<?php echo $CALTEXT['SETTINGS']; ?>" class="edit_button float_right" onclick="window.location='<?php echo LEPTON_URL; ?>/modules/procalendar/modify_settings.php?page_id=<?php echo $page_id; ?>&amp;section_id=<?php echo $section_id; ?>'">
       </input>
       <input class="edit_button" type="button" value="<?php echo $CALTEXT['NEW-EVENT']; ?>" onclick='document.location.href="<?php echo $url; ?>"'> </input>
       <?php if ($editMode == "new" ||$editMode == "edit") { ?>
@@ -1844,7 +1844,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
 
 <script type="text/javascript" charset="utf-8">
 // Adding variables for datepicker - sent to backend_body.js:
-var MODULE_URL	= WB_URL + '/modules/procalendar';
+var MODULE_URL	= LEPTON_URL + '/modules/procalendar';
 var firstDay 	= <?php echo $jscal_firstday; ?>;      // Firstday, 0=sunday/1=monday
 var format 		= '<?php echo $jscal_format; ?>';      // format of date, mm.dd.yyy etc    
 var datestart 	= '<?php echo date($jscal_ifformat,$datetime_start); ?>';    // datestart in input field
@@ -1854,7 +1854,7 @@ var datefrom 	= '<?php echo date($jscal_ifformat,mktime(0, 0, 0, date("m"),   da
 	$jscal_lang = defined('LANGUAGE')?strtolower(LANGUAGE):'en';
 	$jscal_lang = $jscal_lang!=''?$jscal_lang:'en';
 
-    if(file_exists(WB_PATH."/modules/procalendar/js/lang/date_".$jscal_lang.".js")) {
+    if(file_exists(LEPTON_PATH."/modules/procalendar/js/lang/date_".$jscal_lang.".js")) {
 		echo 'var datelang 	= "date_'.$jscal_lang.'.js"';
 	} else {
 		echo 'var datelang 	= "none"';

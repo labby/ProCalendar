@@ -24,14 +24,14 @@
 require('../../config.php');
 
 // Include WB admin wrapper script
-require(WB_PATH.'/modules/admin.php');
+require(LEPTON_PATH.'/modules/admin.php');
 
 
 if (LANGUAGE_LOADED) {        // load languagepack
-  if(file_exists(WB_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {    // if exist proper language mutation
-    require_once(WB_PATH."/modules/procalendar/languages/".LANGUAGE.".php");    // load it
+  if(file_exists(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {    // if exist proper language mutation
+    require_once(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php");    // load it
   } else {
-    require_once(WB_PATH."/modules/procalendar/languages/EN.php");        // else use english
+    require_once(LEPTON_PATH."/modules/procalendar/languages/EN.php");        // else use english
   }
 }
 $fillvalue = "";
@@ -83,7 +83,7 @@ $CTypes['4'] = $CALTEXT['CUSTOM_OPTIONS-4'];
 
 ?>
 
-<form name="modify_startday" method="post" action="<?php echo WB_URL; ?>/modules/procalendar/save_customs.php">
+<form name="modify_startday" method="post" action="<?php echo LEPTON_URL; ?>/modules/procalendar/save_customs.php">
   <input type="hidden" name="page_id" value="<?php echo $page_id; ?>">
   <input type="hidden" name="section_id" value="<?php echo $section_id; ?>">
   <input type="hidden" name="type" value="customs">
@@ -316,7 +316,7 @@ $CTypes['4'] = $CALTEXT['CUSTOM_OPTIONS-4'];
 </form>
 
 <br>
-<input type="button" class="edit_button" value="<?php echo $CALTEXT['BACK']; ?>" onclick="javascript: window.location = '<?php echo WB_URL."/modules/procalendar/modify_settings.php?page_id=$page_id&amp;section_id=$section_id"; ?>';" />
+<input type="button" class="edit_button" value="<?php echo $CALTEXT['BACK']; ?>" onclick="javascript: window.location = '<?php echo LEPTON_URL."/modules/procalendar/modify_settings.php?page_id=$page_id&amp;section_id=$section_id"; ?>';" />
 <?php
 $admin->print_footer();
 ?>

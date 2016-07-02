@@ -1,7 +1,7 @@
 <?php
 
-include(WB_PATH.'/modules/argoscalendar/info.php');
-include(WB_PATH.'/modules/argoscalendar/modconfig.php');
+include(LEPTON_PATH.'/modules/argoscalendar/info.php');
+include(LEPTON_PATH.'/modules/argoscalendar/modconfig.php');
 
 function ArgosCalendarSetPageHtmlHead()
 {

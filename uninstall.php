@@ -21,7 +21,7 @@
 
 */
 
-if (!defined('WB_PATH')) exit("Cannot access this file directly");
+if (!defined('LEPTON_PATH')) exit("Cannot access this file directly");
 
 
 $database->query("DELETE FROM ".TABLE_PREFIX."search WHERE name = 'module' AND value = 'mod_procalendar_settings'");
