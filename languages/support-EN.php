@@ -60,7 +60,7 @@ if (LANGUAGE_LOADED) {        // load languagepack
     <ul>
       <li><strong>Text field:</strong> a single line of information, typically used for a few words or a single sentence.</li>
       <li><strong>Text area:</strong> multiple lines of information,typically used for small texts consisting of several sentences.</li>
-      <li><strong>WB link:</strong> a link to another WB-page on the same website.</li>
+      <li><strong>Link:</strong> a link to another  internal page on the same website.</li>
       <li><strong>Image:</strong> an image you can upload or refer to in the Media section. The image may be automatically resized to the maximum width or height you set in the first option on the Custom Fields page.</li>
     </ul>
     <p>You are free to use any of the 9 available custom fields by setting the type, and modifying the field template. Only custom fields that are &quot;switched on&quot; by setting the type, will be available when entering a new event. You can set the field name to anything you like, and change the field template to your liking. </p>
@@ -70,7 +70,7 @@ if (LANGUAGE_LOADED) {        // load languagepack
     &nbsp;&nbsp;&nbsp;&lt;div class=&quot;field_title&quot;&gt;[CUSTOM_NAME]&lt;/div&gt;   <br />
 &nbsp;&nbsp;&nbsp;[CUSTOM_CONTENT] <br />
 &lt;/div&gt;</code></p>
-  <p><strong>WB link</strong><br />
+  <p><strong>Link</strong><br />
     <code>&lt;div class=&quot;field_line&quot;&gt;     <br />
     &nbsp;&nbsp;&nbsp;&lt;a href=&quot;[wblink[CUSTOM_CONTENT]]&quot;&gt;[CUSTOM_NAME]&lt;/a&gt; <br />
   &lt;/div&gt; </code></p>

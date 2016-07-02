@@ -63,7 +63,7 @@ if (LANGUAGE_LOADED) {        // load languagepack
 	<li>
 		<b>Textarea: </b>Langtext (mehrere S&auml;tze)</li>
 	<li>
-		<b>WB Link:</b> Link zu einer anderen Seite auf derselben Website.</li>
+		<b>Link:</b> Link zu einer anderen Seite auf derselben Website.</li>
 	<li>
 		<b>Bild:</b> Bild, das entweder hier hochgeladen oder in der Medienverwaltung ausgew&auml;hlt wird. Das Bild kann automatisch auf eine bestimmte Gr&ouml;&szlig;e verkleinert werden; diese Gr&ouml;&szlig;e wird ganz oben auf der Eigene-Felder-Seite festgelegt.</li>
 </ul>

@@ -80,7 +80,7 @@ $database->query("INSERT INTO ".TABLE_PREFIX."mod_procalendar_settings SET page_
 	custom2 = 'Text area',
 	customtemplate3 = '$ct3',
 	usecustom3 = 3,
-	custom3 = 'WB link',
+	custom3 = 'Link',
 	customtemplate4 = '$ct4',
 	usecustom4 = 4,
 	custom4 = 'Image',
