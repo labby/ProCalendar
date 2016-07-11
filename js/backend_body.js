@@ -50,8 +50,8 @@ if (typeof MODULE_URL != 'undefined') {
 };
 
 // load the ColorPicker for editing categories only when needed
-if (location.href.search(/modify_settings/) > -1)
-  $.insert('js/mColorPicker/javascripts/mColorPicker.js');
+//if (location.href.search(/modify_settings/) > -1)
+//  $.insert('js/mColorPicker/javascripts/mColorPicker.js');
   
 
 $(document).ready(function () {

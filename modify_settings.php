@@ -192,7 +192,7 @@ if ($db->numRows() > 0) {
  *	Set the default values for the background
  */
 $bghex = "ffffff";
-$bgColor = "#ffffff";
+$bgColor = "background:#ffffff";
 
 ?>
 <form name="modify_eventgroup" method="post" action="<?php echo LEPTON_URL; ?>/modules/procalendar/save_settings.php">
