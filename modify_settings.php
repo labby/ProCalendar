@@ -27,16 +27,14 @@ require('../../config.php');
 require(LEPTON_PATH.'/modules/admin.php');
 
 // include core functions of WB 2.7 to edit the optional module CSS files (frontend.css, backend.css)
-@include_once(LEPTON_PATH .'/framework/summary.module_edit_css.php');
+include_once(LEPTON_PATH .'/framework/summary.module_edit_css.php');
 
+// Check if module language file exists for the language set by the user (e.g. DE, EN)
+$lang_file = __DIR__.'/languages/'.LANGUAGE .'.php';
+require_once( file_exists($lang_file) ? $lang_file : __DIR__.'/languages/EN.php');
 
-if (LANGUAGE_LOADED) {        // load languagepack
-  if(file_exists(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php")) {    // if exist proper language mutation
-    require_once(LEPTON_PATH."/modules/procalendar/languages/".LANGUAGE.".php");    // load it
-  } else {
-    require_once(LEPTON_PATH."/modules/procalendar/languages/EN.php");        // else use english
-  }
-}
+$leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
+
 $fillvalue = "";
 
 $group_id = 0;
@@ -188,18 +186,27 @@ if ($db->numRows() > 0) {
 </table>
 
 <br /><br />
+<?php
 
+/**
+ *	Set the default values for the background
+ */
+$bghex = "ffffff";
+$bgColor = "#ffffff";
+
+?>
 <form name="modify_eventgroup" method="post" action="<?php echo LEPTON_URL; ?>/modules/procalendar/save_settings.php">
-  <input type="hidden" name="page_id" value="<?php echo $page_id; ?>">
-  <input type="hidden" name="section_id" value="<?php echo $section_id; ?>">
-  <input type="hidden" name="type" value="change_eventgroup">
+	<input type="hidden" name="page_id" value="<?php echo $page_id; ?>" />
+	<input type="hidden" name="section_id" value="<?php echo $section_id; ?>" />
+	<input type="hidden" name="type" value="change_eventgroup" />
+	<input type="hidden" name="leptoken" value="<?php echo $leptoken; ?>" />
 	<table cellpadding="2" cellspacing="0" border="0" width="450">
     <tr>
         <td colspan="2"><h2><?php echo $CALTEXT['CATEGORY-MANAGEMENT']; ?></h2></td>
     </tr>
     <tr>
       <td>
-          <select class="edit_select_short" name="group_id" onchange="document.location.href='<?php echo LEPTON_URL."/modules/procalendar/modify_settings.php?page_id=$page_id&amp;section_id=$section_id&amp;group_id="?>'+this.value">
+          <select class="edit_select_short" name="group_id" onchange="procalendar_change_cat( '<?php echo LEPTON_URL."/modules/procalendar/modify_settings.php"; ?>', <?php echo $page_id; ?>, <?php echo $section_id; ?>, '<?php echo $leptoken ?>', this.value);">
               <option value="0"><?php echo $CALTEXT['CHOOSE-CATEGORY']; ?></option>
               <?php
 		  $sql = "SELECT * FROM ".TABLE_PREFIX."mod_procalendar_eventgroups WHERE section_id=$section_id ORDER BY name ASC ";
