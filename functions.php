@@ -958,7 +958,7 @@ function ShowActionListEditor($actions, $day=NULL, $pageid = NULL, $dayview) {
   {
     $HeaderText = "$day-$month-$year&nbsp;&nbsp;$BackToMonthLink";
   }
-
+$leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
   ?>
 <div class="actionlist">
   <h2><?php echo $HeaderText; ?></h2>
@@ -1001,6 +1001,8 @@ function ShowActionListEditor($actions, $day=NULL, $pageid = NULL, $dayview) {
         if (isset($pageid)) {
           $link .= "&amp;page_id=$pageid";
         }
+        
+        $link .= "&amp;leptoken=".$leptoken;
         ?>
     <tr>
       <td width="18%" valign="top" class="actionlist_date"><?php
