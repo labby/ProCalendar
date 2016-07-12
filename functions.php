@@ -257,11 +257,11 @@ function ShowCalendar
   $output = '<div class="show_calendar">'; 
   $output .= '<table border="0" cellpadding="0" cellspacing="0" class="calendarmod" >';
   $output .= '  <tr class="calendarmod-header">';
-  $output .= '    <td><span class="arrows"><a href="?page_id=' . $page_id . '&amp;month=' . $month . '&amp;year=' . ($year-1)  . '" title="' . ($year-1). '">&laquo;</a></span>';
-  $output .= '    <span><a href="?page_id=' . $page_id . '&amp;month=' . $prevmonth . '&amp;year=' . $prevyear . '" title="' . $monthnames[$prevmonth] . '">&lsaquo;</a></span></td>';
-  $output .= '    <td colspan="5" width="150">' . $monthnames[$month] . '&nbsp;' . $year . '</td>';
-  $output .= '    <td><span class="arrows"><a href="?page_id=' . $page_id . '&amp;month=' . $nextmonth . '&amp;year=' . $nextyear . '" title="' . $monthnames[$nextmonth] . '">&rsaquo;</a></span>';
-  $output .= '    <span><a href="?page_id=' . $page_id . '&amp;month=' . $month . '&amp;year=' . ($year+1)  . '" title="' . ($year+1). '">&raquo;</a></span></td>';
+  $output .= '    <td><span class="arrows"><a href="?page_id=' . $page_id . '&amp;month=' . $month . '&amp;year=' . ($year-1)  . '&amp;leptoken=' . $leptoken .'" title="' . ($year-1). '">&laquo;</a></span>';
+  $output .= '    <span><a href="?page_id=' . $page_id . '&amp;month=' . $prevmonth . '&amp;year=' . $prevyear . '&amp;leptoken=' . $leptoken .'" title="' . $monthnames[$prevmonth] . '">&lsaquo;</a></span></td>';
+  $output .= '    <td colspan="5" width="150">' . $monthnames[$month] . '&nbsp;' . $year .'</td>';
+  $output .= '    <td><span class="arrows"><a href="?page_id=' . $page_id . '&amp;month=' . $nextmonth . '&amp;year=' . $nextyear . '&amp;leptoken=' . $leptoken .'" title="' . $monthnames[$nextmonth] . '">&rsaquo;</a></span>';
+  $output .= '    <span><a href="?page_id=' . $page_id . '&amp;month=' . $month . '&amp;year=' . ($year+1)  . '&amp;leptoken=' . $leptoken .'" title="' . ($year+1). '">&raquo;</a></span></td>';
   $output .= ' </tr>';
 
   // ShowTermineDebug($month, $year, $actions);
