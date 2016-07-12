@@ -190,7 +190,7 @@ if ($db->numRows() > 0) {
 /**
  *	Set the default values for the background
  */
-$bghex = "ffffff";
+$bghex = "#ffffff";
 $bgColor = "background:#ffffff";
 
 ?>
@@ -230,7 +230,7 @@ $bgColor = "background:#ffffff";
       <td valign="top" align="right"><input class="edit_button" type="submit" name="delete" value="<?php echo $CALTEXT['DELETE']; ?>"></td>
     </tr>
     <tr>
-      <td><input class="edit_field_short color" style="<?php echo $bgColor; ?>;" data-hex="true" type="text" title="<?php echo $CALTEXT['FORMAT_ACTION']; ?>" value="<?php echo $fillvalue; ?>" name="group_name"></td>
+      <td><input class="edit_field_short color" style="<?php echo $bgColor; ?>;" data-hex="true" type="text" title="<?php echo $CALTEXT['FORMAT_ACTION']; ?>" value="<?php echo $fillvalue; ?>" name="group_name" id="group_name"></td>
       <td valign="top" align="right"><input class="edit_button" type="submit" value="<?php echo $CALTEXT['SAVE']; ?>"></td>
     </tr>
     <tr>

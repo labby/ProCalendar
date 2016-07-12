@@ -146,9 +146,29 @@ $(document).ready(function () {
 });
 
 // initiate color picker spectrum
+/**
+ *	Aldus
+ *	[1] Get the initial color for the picker from the hidden form-field.
+ */
+var temp_ref = document.getElementById("action_background");
+if(temp_ref){
+	var temp_color = temp_ref.value;
+} else {
+	var temp_color = "#ff0000";
+}
+
 $(".basic").spectrum({
-    color: "#f00",
+    color: temp_color,
     change: function(color) {
-        $("#basic-log").text("change called: " + color.toHexString());
+       // $("#basic-log").text("change called: " + color.toHexString());
+       var ref = document.getElementById("action_background");
+       if(ref) {
+			ref.value = color.toHexString();
+		}
+		
+		ref = document.getElementById("group_name");
+		if(ref) {
+			ref.style.background = color.toHexString();
+		}
     }
 });
