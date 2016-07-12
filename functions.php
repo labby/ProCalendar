@@ -241,6 +241,7 @@ function ShowCalendar
   global $page_id, $monthnames, $weekdays;
   global $database, $admin, $wb;
   
+  
   ($month > 1)   ? ($prevmonth = $month - 1) :  ($prevmonth = 12);
   ($month < 12)  ? ($nextmonth = $month + 1) :  ($nextmonth = 1);
   ($month == 1)  ? ($prevyear = $year - 1)   : ($prevyear = $year);
@@ -250,6 +251,8 @@ function ShowCalendar
   $firstday  = FirstDay($month,$year);
   //$previmg   = LEPTON_URL."/modules/procalendar/prev.png";
   //$nextimg   = LEPTON_URL."/modules/procalendar/next.png";
+
+	$leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
 
   $output = '<div class="show_calendar">'; 
   $output .= '<table border="0" cellpadding="0" cellspacing="0" class="calendarmod" >';
@@ -316,7 +319,7 @@ function ShowCalendar
   				if($IsBackend==false)
             $output .= $day;
 					else
-		  			$output .="<a href='?page_id=$page_id&amp;day=$day&amp;month=$month&amp;year=$year&amp;edit=new'>$day</a>"; 
+		  			$output .="<a href='?page_id=$page_id&amp;day=$day&amp;month=$month&amp;year=$year&amp;edit=new&amp;leptoken=$leptoken'>$day</a>"; 
         } 
         else  //day must be marked
         {
@@ -327,7 +330,7 @@ function ShowCalendar
         		}
         		
         	  $output .="<td class='calendar_markday".$procal_today."' id='acttype".$tmp["acttype"]."' ".$style.">";
-            $output .="<a href='?page_id=$page_id&amp;day=$day&amp;month=$month&amp;year=$year&amp;dayview=1'>$day</a>"; 
+            $output .="<a href='?page_id=$page_id&amp;day=$day&amp;month=$month&amp;year=$year&amp;dayview=1&amp;leptoken=$leptoken'>$day</a>"; 
             //$output .="<a href='".$link."'>$day</a>"; 
         }       
       }
