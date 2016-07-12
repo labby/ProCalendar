@@ -489,7 +489,10 @@ if ($HeaderText<>'') {
         }
       
         $link .= "&amp;id=".$tmp['id']."&amp;section_id=$section_id&amp;detail=1";
-                
+        
+        $leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
+        $link .= "&amp;leptoken=".$leptoken;      
+        
         ?>
     <tr id=<?php echo '"acttype'.$tmp["acttype"].'" '.$style; ?>>
       <td class="actionlist_date"><?php
