@@ -61,7 +61,7 @@ if (LANGUAGE_LOADED) {        // load languagepack
     <ul>
       <li><strong>Tekstveld:</strong> een enkele regel informatie, meestal gebruikt voor een paar woorden of enkele zin.</li>
       <li><strong>Tekstvak:</strong> meerdere regels informatie, meestal gebruikt voor kleine teksten bestaande uit meerdere zinnen.</li>
-      <li><strong>WB-link:</strong> een link naar een andere WB-pagina op dezelfde website, een interne link dus.</li>
+      <li><strong>Link:</strong> een link naar een andere WB-pagina op dezelfde website, een interne link dus.</li>
       <li><strong>Afbeelding:</strong> een afbeelding die u kunt  uploaden of naar verwijzen vanuit de Media-sectie. De afbeelding kan automatisch verkleind worden naar de maximale hoogte of breedte die u instelt in de eerste optie op de pagina voor de Extra Velden.</li>
     </ul>
     <p>Het staat u vrij om een of meerdere extra in- en uitvoervelden te gebruiken als aanvulling op de standaardvelden. U kunt daarbij de template en de naam van ieder veld naar wens aanpassen. Alleen de extra velden die zijn  &quot;ingeschakeld&quot; door het veldtype te kiezen, zullen beschikbaar zijn bij het aanmaken van een nieuwe gebeurtenis. </p>
@@ -71,7 +71,7 @@ if (LANGUAGE_LOADED) {        // load languagepack
     &nbsp;&nbsp;&nbsp;&lt;div class=&quot;field_title&quot;&gt;[CUSTOM_NAME]&lt;/div&gt;   <br />
 &nbsp;&nbsp;&nbsp;[CUSTOM_CONTENT] <br />
 &lt;/div&gt;</code></p>
-  <p><strong>WB-link</strong><br />
+  <p><strong>Link</strong><br />
     <code>&lt;div class=&quot;field_line&quot;&gt;     <br />
     &nbsp;&nbsp;&nbsp;&lt;a href=&quot;[wblink[CUSTOM_CONTENT]]&quot;&gt;[CUSTOM_NAME]&lt;/a&gt; <br />
   &lt;/div&gt; </code></p>

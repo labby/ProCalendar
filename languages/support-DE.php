@@ -70,7 +70,7 @@ if (LANGUAGE_LOADED) {        // load languagepack
 <p>Es k&ouml;nnen beliebig viele der 9 Felder verwendet werden, indem der Feldtyp ausgew&auml;hlt und die Ausgabe im Feld-Template festgelegt wird. Dabei werden nur die Eingabefelder angezeigt, die auch aktiviert werden (also nicht auf &quot;Nicht benutzt&quot; stehen). Feldbezeichnung und Feld-Template k&ouml;nnen beliebig festgelegt werden.</p>
 <p>Die Standard-Feldtemplate sind:</p>
 <p><strong>Textfeld</strong> / <strong>Textarea</strong><br /><code>&lt;div class=&quot;field_line&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&lt;div class=&quot;field_title&quot;&gt;[CUSTOM_NAME]&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;[CUSTOM_CONTENT]<br />&lt;/div&gt;</code></p>
-<p><strong>WB-Link</strong><br /><code>&lt;div class=&quot;field_line&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&lt;a href=&quot;[wblink[CUSTOM_CONTENT]]&quot;&gt;[CUSTOM_NAME]&lt;/a&gt;<br />&lt;/div&gt; </code></p>
+<p><strong>Link</strong><br /><code>&lt;div class=&quot;field_line&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&lt;a href=&quot;[wblink[CUSTOM_CONTENT]]&quot;&gt;[CUSTOM_NAME]&lt;/a&gt;<br />&lt;/div&gt; </code></p>
 <p><strong>Bild</strong><br /><code>&lt;div class=&quot;field_line&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&lt;img src=&quot;[CUSTOM_CONTENT]&quot; border =&quot;0&quot; alt=&quot;[CUSTOM_NAME]&quot; /&gt;<br />&lt;/div&gt;</code></p>
 <hr />
 <h3>Template</h3>

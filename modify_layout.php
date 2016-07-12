@@ -23,10 +23,10 @@
 
 require('../../config.php');
 
-// Include WB admin wrapper script
+// Include admin wrapper script
 require(LEPTON_PATH.'/modules/admin.php');
-// include core functions of WB 2.7 to edit the optional module CSS files (frontend.css, backend.css)
-@include_once(LEPTON_PATH .'/framework/summary.module_edit_css.php');
+// edit the optional module CSS files (frontend.css, backend.css)
+include_once(LEPTON_PATH .'/framework/summary.module_edit_css.php');
 
 
 if (LANGUAGE_LOADED) {        // load languagepack

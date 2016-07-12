@@ -1846,6 +1846,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
 
 <script type="text/javascript" charset="utf-8">
 // Adding variables for datepicker - sent to backend_body.js:
+var LEPTON_URL = "<?php echo LEPTON_URL; ?>";
 var MODULE_URL	= LEPTON_URL + '/modules/procalendar';
 var firstDay 	= <?php echo $jscal_firstday; ?>;      // Firstday, 0=sunday/1=monday
 var format 		= '<?php echo $jscal_format; ?>';      // format of date, mm.dd.yyy etc    
