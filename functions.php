@@ -498,7 +498,7 @@ if ($HeaderText<>'') {
             {
                if($tmp['date_end'] != $tmp['date_start']) //only show end date if event has multiple days 
                {
-                 echo "&nbsp;/&nbsp;"; 
+                 echo "&nbsp;-&nbsp;"; 
                  echo $tmp['fdate_end'];
                }
             }
@@ -1009,7 +1009,7 @@ $leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
          echo $tmp['fdate_start'];
          if($tmp['date_end'] != $tmp['date_start']) //only show end date if event has multiple days 
          {
-           echo "&nbsp;/&nbsp;";
+           echo "&nbsp;-&nbsp;";
            echo $tmp['fdate_end'];
          }
          ?>

@@ -82,43 +82,40 @@ case "change_eventgroup":
 		$usetime      = $admin->get_post('usetime');
 		$useformat    = $admin->get_post('useformat');
 		switch ($useformat) {
-		  case "dd.mm.yyyy":
+		  case "dd.mm.yy":
 		     $useifformat = "d.m.Y";
 			 break;
-		  case "dd-mm-yyyy":
+		  case "dd-mm-yy":
 		     $useifformat = "d-m-Y";
 			 break;
-		  case "dd/mm/yyyy":
+		  case "dd/mm/yy":
 		     $useifformat = "d/m/Y";
 			 break;
-		  case "dd mm yyyy":
+		  case "dd mm yy":
 		     $useifformat = "d m Y";
 			 break;
-		  case "mm.dd.yyyy":
+		  case "mm.dd.yy":
 		     $useifformat = "m.d.Y";
 			 break;
-			case "mm. dd. yyyy":
-		     $useifformat = "m. d. Y";
-			 break;
-		  case "mm-dd-yyyy":
+		  case "mm-dd-yy":
 		     $useifformat = "m-d-Y";
 			 break;
-		  case "mm/dd/yyyy":
+		  case "mm/dd/yy":
 		     $useifformat = "m/d/Y";
 			 break;
-		  case "mm dd yyyy":
+		  case "mm dd yy":
 		     $useifformat = "m d Y";
 			 break;
-		  case "yyyy.mm.dd":
+		  case "yy.mm.dd":
 		     $useifformat = "Y.m.d";
 			 break;
-		  case "yyyy-mm-dd":
+		  case "yy-mm-dd":
 		     $useifformat = "Y-m-d";
 			 break;
-		  case "yyyy/mm/dd":
+		  case "yy/mm/dd":
 		     $useifformat = "Y/m/d";
 			 break;
-		  case "yyyy mm dd":
+		  case "yy mm dd":
 		     $useifformat = "Y m d";
 			 break;
 		  default:

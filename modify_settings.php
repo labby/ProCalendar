@@ -89,19 +89,18 @@ if ($db->numRows() > 0) {
             <tr>
               <td><?php echo $CALTEXT['CAL-OPTIONS-FORMAT'];?></td>
               <td valign="top"><select class="edit_select_short" name="useformat" >
-                <option value="dd.mm.yyyy" <?php if($useformat == 'dd.mm.yyyy') { echo ' selected="selected"'; } ?>>dd.mm.yyyy</option>
-                <option value="dd-mm-yyyy" <?php if($useformat == 'dd-mm-yyyy') { echo ' selected="selected"'; } ?>>dd-mm-yyyy</option>
-                <option value="dd/mm/yyyy" <?php if($useformat == 'dd/mm/yyyy') { echo ' selected="selected"'; } ?>>dd/mm/yyyy</option>
-                <option value="dd mm yyyy" <?php if($useformat == 'dd mm yyyy') { echo ' selected="selected"'; } ?>>dd mm yyyy</option>
-                <option value="mm.dd.yyyy" <?php if($useformat == 'mm.dd.yyyy') { echo ' selected="selected"'; } ?>>mm.dd.yyyy</option>
-                <option value="mm. dd. yyyy" <?php if($useformat == 'mm. dd. yyyy') { echo ' selected="selected"'; } ?>>mm. dd. yyyy</option>                
-                <option value="mm-dd-yyyy" <?php if($useformat == 'mm-dd-yyyy') { echo ' selected="selected"'; } ?>>mm-dd-yyyy</option>
-                <option value="mm/dd/yyyy" <?php if($useformat == 'mm/dd/yyyy') { echo ' selected="selected"'; } ?>>mm/dd/yyyy</option>
-                <option value="mm dd yyyy" <?php if($useformat == 'mm dd yyyy') { echo ' selected="selected"'; } ?>>mm dd yyyy</option>
-                <option value="yyyy.mm.dd" <?php if($useformat == 'yyyy.mm.dd') { echo ' selected="selected"'; } ?>>yyyy.mm.dd</option>
-                <option value="yyyy-mm-dd" <?php if($useformat == 'yyyy-mm-dd') { echo ' selected="selected"'; } ?>>yyyy-mm-dd</option>
-                <option value="yyyy/mm/dd" <?php if($useformat == 'yyyy/mm/dd') { echo ' selected="selected"'; } ?>>yyyy/mm/dd</option>
-                <option value="yyyy mm dd" <?php if($useformat == 'yyyy mm dd') { echo ' selected="selected"'; } ?>>yyyy mm dd</option>
+                <option value="dd.mm.yy" <?php if($useformat == 'dd.mm.yy') { echo ' selected="selected"'; } ?>>dd.mm.yyyy</option>
+                <option value="dd-mm-yy" <?php if($useformat == 'dd-mm-yy') { echo ' selected="selected"'; } ?>>dd-mm-yyyy</option>
+                <option value="dd/mm/yy" <?php if($useformat == 'dd/mm/yy') { echo ' selected="selected"'; } ?>>dd/mm/yyyy</option>
+                <option value="dd mm yy" <?php if($useformat == 'dd mm yy') { echo ' selected="selected"'; } ?>>dd mm yyyy</option>
+                <option value="mm.dd.yy" <?php if($useformat == 'mm.dd.yy') { echo ' selected="selected"'; } ?>>mm.dd.yyyy</option>               
+                <option value="mm-dd-yy" <?php if($useformat == 'mm-dd-yy') { echo ' selected="selected"'; } ?>>mm-dd-yyyy</option>
+                <option value="mm/dd/yy" <?php if($useformat == 'mm/dd/yy') { echo ' selected="selected"'; } ?>>mm/dd/yyyy</option>
+                <option value="mm dd yy" <?php if($useformat == 'mm dd yy') { echo ' selected="selected"'; } ?>>mm dd yyyy</option>
+                <option value="yy.mm.dd" <?php if($useformat == 'yy.mm.dd') { echo ' selected="selected"'; } ?>>yyyy.mm.dd</option>
+                <option value="yy-mm-dd" <?php if($useformat == 'yy-mm-dd') { echo ' selected="selected"'; } ?>>yyyy-mm-dd</option>
+                <option value="yy/mm/dd" <?php if($useformat == 'yy/mm/dd') { echo ' selected="selected"'; } ?>>yyyy/mm/dd</option>
+                <option value="yy mm dd" <?php if($useformat == 'yy mm dd') { echo ' selected="selected"'; } ?>>yyyy mm dd</option>
               </select></td>
             </tr>
             <tr>

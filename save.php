@@ -56,7 +56,7 @@ function jscal_to_date($strDate, $jscalFormat) {
 	if ($strDate != ""){
 	  $dateParts = preg_split( "#\s|/|\.|-#", $strDate);
 	  $dateCombined = array_combine($jscalFormat, $dateParts);
-	  $formatedDate = $dateCombined['yyyy']."-".$dateCombined['mm']."-".$dateCombined['dd'];
+	  $formatedDate = $dateCombined['yy']."-".$dateCombined['mm']."-".$dateCombined['dd'];
 	};
 	return $formatedDate;
 };
