@@ -35,7 +35,8 @@ $mod_headers = array();
 $mod_headers = array(
 	'backend' => array(
 		'js' => array(
-			'/modules/procalendar/js/mColorPicker/javascripts/mColorPicker.js',
+//			'/modules/procalendar/js/mColorPicker/javascripts/mColorPicker.js',
+			'/modules/procalendar/js/picker/spectrum.js',
 			'/modules/procalendar/js/date.js',	
 			'/modules/lib_jquery/jquery-ui/jquery-ui.min.js',
 			'/modules/lib_jquery/jquery-ui/ui/i18n/datepicker-'.strtolower(LANGUAGE).'.js',		
@@ -44,7 +45,11 @@ $mod_headers = array(
             array(
                 'media' => 'all',
                 'file' => '/modules/lib_jquery/jquery-ui/jquery-ui.min.css'
-               )
+               ),
+            array(
+                'media' => 'all',
+                'file' => '/modules/procalendar/js/picker/spectrum.css'
+               ),			   
             )
 	)
 );

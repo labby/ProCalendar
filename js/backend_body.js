@@ -144,3 +144,11 @@ $(document).ready(function () {
 		};
 	};
 });
+
+// initiate color picker spectrum
+$(".basic").spectrum({
+    color: "#f00",
+    change: function(color) {
+        $("#basic-log").text("change called: " + color.toHexString());
+    }
+});

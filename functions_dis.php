@@ -241,7 +241,6 @@ function ShowCalendar
   global $page_id, $monthnames, $weekdays;
   global $database, $admin, $wb;
   
-  
   ($month > 1)   ? ($prevmonth = $month - 1) :  ($prevmonth = 12);
   ($month < 12)  ? ($nextmonth = $month + 1) :  ($nextmonth = 1);
   ($month == 1)  ? ($prevyear = $year - 1)   : ($prevyear = $year);
@@ -252,16 +251,14 @@ function ShowCalendar
   //$previmg   = LEPTON_URL."/modules/procalendar/prev.png";
   //$nextimg   = LEPTON_URL."/modules/procalendar/next.png";
 
-	$leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
-
   $output = '<div class="show_calendar">'; 
   $output .= '<table border="0" cellpadding="0" cellspacing="0" class="calendarmod" >';
   $output .= '  <tr class="calendarmod-header">';
-  $output .= '    <td><span class="arrows"><a href="?page_id=' . $page_id . '&amp;month=' . $month . '&amp;year=' . ($year-1)  . '&amp;leptoken=' . $leptoken .'" title="' . ($year-1). '">&laquo;</a></span>';
-  $output .= '    <span><a href="?page_id=' . $page_id . '&amp;month=' . $prevmonth . '&amp;year=' . $prevyear . '&amp;leptoken=' . $leptoken .'" title="' . $monthnames[$prevmonth] . '">&lsaquo;</a></span></td>';
-  $output .= '    <td colspan="5" width="150">' . $monthnames[$month] . '&nbsp;' . $year .'</td>';
-  $output .= '    <td><span class="arrows"><a href="?page_id=' . $page_id . '&amp;month=' . $nextmonth . '&amp;year=' . $nextyear . '&amp;leptoken=' . $leptoken .'" title="' . $monthnames[$nextmonth] . '">&rsaquo;</a></span>';
-  $output .= '    <span><a href="?page_id=' . $page_id . '&amp;month=' . $month . '&amp;year=' . ($year+1)  . '&amp;leptoken=' . $leptoken .'" title="' . ($year+1). '">&raquo;</a></span></td>';
+  $output .= '    <td><span class="arrows"><a href="?page_id=' . $page_id . '&amp;month=' . $month . '&amp;year=' . ($year-1)  . '" title="' . ($year-1). '">&laquo;</a></span>';
+  $output .= '    <span><a href="?page_id=' . $page_id . '&amp;month=' . $prevmonth . '&amp;year=' . $prevyear . '" title="' . $monthnames[$prevmonth] . '">&lsaquo;</a></span></td>';
+  $output .= '    <td colspan="5" width="150">' . $monthnames[$month] . '&nbsp;' . $year . '</td>';
+  $output .= '    <td><span class="arrows"><a href="?page_id=' . $page_id . '&amp;month=' . $nextmonth . '&amp;year=' . $nextyear . '" title="' . $monthnames[$nextmonth] . '">&rsaquo;</a></span>';
+  $output .= '    <span><a href="?page_id=' . $page_id . '&amp;month=' . $month . '&amp;year=' . ($year+1)  . '" title="' . ($year+1). '">&raquo;</a></span></td>';
   $output .= ' </tr>';
 
   // ShowTermineDebug($month, $year, $actions);
@@ -319,7 +316,7 @@ function ShowCalendar
   				if($IsBackend==false)
             $output .= $day;
 					else
-		  			$output .="<a href='?page_id=$page_id&amp;day=$day&amp;month=$month&amp;year=$year&amp;edit=new&amp;leptoken=$leptoken'>$day</a>"; 
+		  			$output .="<a href='?page_id=$page_id&amp;day=$day&amp;month=$month&amp;year=$year&amp;edit=new'>$day</a>"; 
         } 
         else  //day must be marked
         {
@@ -330,7 +327,7 @@ function ShowCalendar
         		}
         		
         	  $output .="<td class='calendar_markday".$procal_today."' id='acttype".$tmp["acttype"]."' ".$style.">";
-            $output .="<a href='?page_id=$page_id&amp;day=$day&amp;month=$month&amp;year=$year&amp;dayview=1&amp;leptoken=$leptoken'>$day</a>"; 
+            $output .="<a href='?page_id=$page_id&amp;day=$day&amp;month=$month&amp;year=$year&amp;dayview=1'>$day</a>"; 
             //$output .="<a href='".$link."'>$day</a>"; 
         }       
       }
@@ -492,10 +489,7 @@ if ($HeaderText<>'') {
         }
       
         $link .= "&amp;id=".$tmp['id']."&amp;section_id=$section_id&amp;detail=1";
-        
-        $leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
-        $link .= "&amp;leptoken=".$leptoken;      
-        
+                
         ?>
     <tr id=<?php echo '"acttype'.$tmp["acttype"].'" '.$style; ?>>
       <td class="actionlist_date"><?php

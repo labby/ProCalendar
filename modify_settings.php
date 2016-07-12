@@ -234,13 +234,13 @@ $bgColor = "background:#ffffff";
       <td valign="top" align="right"><input class="edit_button" type="submit" value="<?php echo $CALTEXT['SAVE']; ?>"></td>
     </tr>
     <tr>
-    	<td><input type="checkbox" name="dayformat" value="1" <?php echo $dayChecked; ?>><?php echo $CALTEXT['FORMAT_DAY']; ?>
+    	<td><input type='text' class="basic"/><input type="checkbox" name="dayformat" value="1" <?php echo $dayChecked; ?>><?php echo $CALTEXT['FORMAT_DAY']; ?>
     	</td>
-    	 <td>
+    	<td>
     	</td>
     </tr>	
   </table>
-  <input type="hidden" name="action_background" value="<?php echo $bghex; ?>">  
+  <input type="text" id="action_background" name="action_background" value="<?php echo $bghex; ?>">  
 </form>
 <br />
 <br />

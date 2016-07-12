@@ -105,3 +105,10 @@ DIV.dp-popup TD.disabled {cursor:default;}
 
 .procal_hidden {display:none;}
 .rec_rep_count {vertical-align:top;}
+
+
+input[type="checkbox"] {
+    margin-left: 14px;
+    margin-right: 6px;
+    vertical-align: -3px;
+}
