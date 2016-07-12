@@ -35,11 +35,9 @@ $mod_headers = array();
 $mod_headers = array(
 	'backend' => array(
 		'js' => array(
-//			'/modules/procalendar/js/mColorPicker/javascripts/mColorPicker.js',
 			'/modules/procalendar/js/picker/spectrum.js',
 			'/modules/procalendar/js/date.js',	
-			'/modules/lib_jquery/jquery-ui/jquery-ui.min.js',
-			'/modules/lib_jquery/jquery-ui/ui/i18n/datepicker-'.strtolower(LANGUAGE).'.js',		
+			'/modules/lib_jquery/jquery-ui/jquery-ui.min.js'	
 		),
         'css' => array(
             array(
@@ -53,4 +51,13 @@ $mod_headers = array(
             )
 	)
 );
+
+/**
+ *	This one is a little bit specific: we are looking for a
+ *	matching language-file inside the lib_jquery module.
+ *
+ */
+$look_for = '/modules/lib_jquery/jquery-ui/ui/i18n/datepicker-'.strtolower(LANGUAGE).'.js';
+if(file_exists( LEPTON_PATH.$look_for )) $mod_headers['backend']['js'][] = $look_for;
+
 ?>

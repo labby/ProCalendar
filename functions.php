@@ -253,7 +253,8 @@ function ShowCalendar
   //$nextimg   = LEPTON_URL."/modules/procalendar/next.png";
 
 	$leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
-
+	if (($leptoken == "") AND (isset($_GET['amp;leptoken']))) $leptoken = $_GET['amp;leptoken'];
+	
   $output = '<div class="show_calendar">'; 
   $output .= '<table border="0" cellpadding="0" cellspacing="0" class="calendarmod" >';
   $output .= '  <tr class="calendarmod-header">';
@@ -1494,6 +1495,9 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
 		$custom9        = $rec["custom9"];		
 	} 
 
+	$leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
+	if (($leptoken == "") AND (isset($_GET['amp;leptoken']))) $leptoken = $_GET['amp;leptoken'];
+	
   $jscal_today = gmdate('Y/m/d');
   
   if ($editMode == "edit") 
@@ -1587,11 +1591,12 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
 
 <div class="event_details">
   <form name="editcalendar" action="<?php echo LEPTON_URL; ?>/modules/procalendar/save.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="cal_id" value="<?php echo $cal_id; ?>"> </input>
-    <input type="hidden" name="page_id" value="<?php echo $page_id; ?>"> </input>
-    <input type="hidden" name="section_id" value="<?php echo $section_id; ?>"> </input>
-    <input type="hidden" name="owner" value="<?php echo $owner; ?>"> </input>
-    <input type="hidden" name="jscal_format" value="<?php echo $jscal_format; ?>"> </input>
+    <input type="hidden" name="cal_id" value="<?php echo $cal_id; ?>" />
+    <input type="hidden" name="page_id" value="<?php echo $page_id; ?>" />
+    <input type="hidden" name="section_id" value="<?php echo $section_id; ?>" />
+    <input type="hidden" name="owner" value="<?php echo $owner; ?>" />
+    <input type="hidden" name="jscal_format" value="<?php echo $jscal_format; ?>" />
+	<input type="hidden" name="leptoken" value="<?php echo $leptoken; ?>" />
 	
     <div id="buttonrow">
       <?php
