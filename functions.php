@@ -1584,7 +1584,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   $datetime_end = mktime(substr($de,11,2),substr($de,14,2),0,substr($de,5,2),substr($de,8,2),substr($de,0,4));
 
 ?>
-   
+
 <div class="event_details">
   <form name="editcalendar" action="<?php echo LEPTON_URL; ?>/modules/procalendar/save.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="cal_id" value="<?php echo $cal_id; ?>"> </input>
@@ -1653,7 +1653,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom1; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom1" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom1']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom1" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom1']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
@@ -1670,7 +1670,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom2; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom2" rows="5" cols="1" class="edit_field"><?php echo $tmp['custom2']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom2" rows="5" cols="1" class="edit_field"><?php echo $tmp['custom2']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
@@ -1687,7 +1687,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom3; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom3" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom3']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom3" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom3']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
@@ -1704,7 +1704,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom4; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom4" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom4']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom4" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom4']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
@@ -1721,7 +1721,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom5; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom5" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom5']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom5" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom5']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
@@ -1738,7 +1738,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom6; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom6" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom6']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom6" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom6']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
@@ -1756,7 +1756,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom7; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom7" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom7']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom7" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom7']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
@@ -1773,7 +1773,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom8; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom8" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom8']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom8" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom8']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
@@ -1790,7 +1790,7 @@ function ShowActionEditor($actions, $day, $show=0, $dayview, $editMode, $month, 
   	    <div class="field_link" >
   	      <div class="field_title"><?php echo $custom9; ?></div>
   	      <div class="field_area" >
-	        <textarea name="custom9" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom9']; ?></textarea>
+	        <textarea id="no_wysiwyg" name="custom9" rows="4" cols="1" class="edit_field"><?php echo $tmp['custom9']; ?></textarea>
 	      </div>
 	    </div>
       <?php }
