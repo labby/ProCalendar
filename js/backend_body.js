@@ -43,8 +43,8 @@ $(document).ready(function () {
 	$('.rec_rep_select input').bind("click change",function(){
 		$('.rec_rep_select input').not($(this)).attr('value',"");
 		$('.rec_rep_select input').not($(this)).prop("checked", false);
-		$('#date2').attr('value',"");
-		$('#end_time').attr('value',"");
+	//	$('#date2').attr('value',"");
+	//	$('#end_time').attr('value',"");
 	});
 	$('#date2').bind("click change",function(){
 		$('.rec_rep_select input').attr('value',"");
