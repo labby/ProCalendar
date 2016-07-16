@@ -1058,14 +1058,27 @@ function ShowActionDetailsFromId ($actions, $id, $section_id, $day)
 //
 //######################################################################
 {
-  global $CALTEXT, $database, $admin;
+	global $CALTEXT, $database, $admin;
 
-  foreach ($actions AS $a) {
-  	if ($a["id"] == $id && date("d", strtotime($a['date_start'])) == $day) {
-  		$tmp =$a;
-  		break;
-  	}
-  }
+	$tmp = -1;
+	foreach ($actions AS $a) {
+		if ($a["id"] == $id && date("d", strtotime($a['date_start'])) == $day) {
+			$tmp =$a;
+			break;
+		}
+	}
+	
+	//	If nothing match ... we start to re-look for an entry only by the given id.
+	//	This could happend if the "call" for the page comes from an (lepton-)search result link
+	//	where the "date" is the currend date!
+	if($tmp === -1) {
+		foreach ($actions AS $a) {
+			if ($a["id"] == $id) {
+				$tmp =$a;
+				break;
+			}
+		}
+	}
 	ShowActionEntry($tmp, $section_id);
 }
 
