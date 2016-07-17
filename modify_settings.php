@@ -248,12 +248,12 @@ $bgColor = "background:#ffffff";
     	</td>
     </tr>	
   </table>
-  <input type="text" id="action_background" name="action_background" value="<?php echo $bghex; ?>">  
+  <input type="hidden" id="action_background" name="action_background" value="<?php echo $bghex; ?>">  
 </form>
 <br />
 <br />
 <br />
 <input type="button" class="edit_button" value="<?php echo $CALTEXT['BACK']; ?>" onclick="javascript: window.location = '<?php echo ADMIN_URL; ?>/pages/modify.php?page_id=<?php echo $page_id; ?>';" />
 <?php
-$admin->print_footer();
+	$admin->print_footer();
 ?>
