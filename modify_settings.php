@@ -230,6 +230,14 @@ $bgColor = "background:#ffffff";
       <td valign="top" align="right"><input class="edit_button" type="submit" name="delete" value="<?php echo $CALTEXT['DELETE']; ?>"></td>
     </tr>
     <tr>
+    <?php
+    	
+    	/**
+    	 *	If the background-color of the cat is too "dark" we have to "switch" the text-color to "white" to keep the text readable.
+		 */
+		$fontcol = $bghex == '' ? '' : (hexdec(substr($bghex,0,3)) + hexdec(substr($bghex,3,2)) + hexdec(substr($bghex,5,2)) < 400) ? '; color:#FFFFFF' : '';
+		if($fontcol <> "") $bgColor .= $fontcol;
+    ?>
       <td><input class="edit_field_short color" style="<?php echo $bgColor; ?>;" data-hex="true" type="text" title="<?php echo $CALTEXT['FORMAT_ACTION']; ?>" value="<?php echo $fillvalue; ?>" name="group_name" id="group_name"></td>
       <td valign="top" align="right"><input class="edit_button" type="submit" value="<?php echo $CALTEXT['SAVE']; ?>"></td>
     </tr>

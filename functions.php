@@ -466,7 +466,7 @@ if ($HeaderText<>'') {
       $daystart   = substr($tmp['date_start'],8,2);
       $monthstart = substr($tmp['date_start'],5,2);
       $yearstart  = substr($tmp['date_start'],0,4);
-      $fontcol		= $tmp['act_format'] == '' ? '' : (hexdec(substr($tmp['act_format'],0,3)) + hexdec(substr($tmp['act_format'],3,2)) + hexdec(substr($tmp['act_format'],5,2)) < 400) ? '; color:#666' : '';
+      $fontcol		= $tmp['act_format'] == '' ? '' : (hexdec(substr($tmp['act_format'],0,3)) + hexdec(substr($tmp['act_format'],3,2)) + hexdec(substr($tmp['act_format'],5,2)) < 400) ? '; color:#FFFFFF' : '';
       $style			= $tmp['act_format'] == '' ? '' : 'style="background:'.$tmp['act_format'].$fontcol.';"';
 
 			//if (!isset($_GET['dayview']) && intval($daystart) !== intval(date('j'))) { continue; }

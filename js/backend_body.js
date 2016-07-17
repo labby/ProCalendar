@@ -160,7 +160,6 @@ if(temp_ref){
 $(".basic").spectrum({
     color: temp_color,
     change: function(color) {
-       // $("#basic-log").text("change called: " + color.toHexString());
        var ref = document.getElementById("action_background");
        if(ref) {
 			ref.value = color.toHexString();
@@ -168,7 +167,10 @@ $(".basic").spectrum({
 		
 		ref = document.getElementById("group_name");
 		if(ref) {
-			ref.style.background = color.toHexString();
+			
+			var val = color.toHexString();
+			ref.style.background = val;
+			ref.style.color = (parseInt(val.substr(1, 2), 16) + parseInt(val.substr(3, 2), 16) + parseInt(val.substr(5, 2), 16) < 400)? 'white': 'black';
 		}
     }
 });
