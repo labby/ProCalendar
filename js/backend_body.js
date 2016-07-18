@@ -6,10 +6,6 @@ $(function() {
        
        
 $(document).ready(function () {
-	// functions for colors in actionlist
-  $('.edit_field_short').bind('colorpicked', function (e,color) {
-    $('input[name="action_background"]').attr('value', color);
-  });
   $('.rec_select input').bind("change myinit", function(event){
   	if ($(this).attr('id') == 'rec_exceptions'){
   		if (event.type != "myinit")
