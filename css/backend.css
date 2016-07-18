@@ -112,3 +112,5 @@ input[type="checkbox"] {
     margin-right: 6px;
     vertical-align: -3px;
 }
+
+.inputbox {margin-top:10px;width:410px;}

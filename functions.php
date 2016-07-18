@@ -1409,7 +1409,7 @@ function select_wblink($title, $name, $wbid, $text) {
   global $tmp;
   echo '<div class="field_line">';
   echo '  <div class="field_title">'.$title.'</div>';
-  $start = '  <select name="'.$name.'" id="'.$name.'" class="inputbox" size="1" style="width:410px;">';
+  $start = '  <select name="'.$name.'" id="'.$name.'" class="inputbox" size="1">';
   $start .= '    <option value="">'.$text.'</option>';
   $end = '  </select>';
   $end .= '</div>';
