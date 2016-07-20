@@ -495,6 +495,7 @@ if ($HeaderText<>'') {
         $link .= "&amp;id=".$tmp['id']."&amp;section_id=$section_id&amp;detail=1";
         
         $leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
+        if(isset($_GET["amp;leptoken"])) $leptoken = $_GET["amp;leptoken"];
         $link .= "&amp;leptoken=".$leptoken;      
         
         ?>
@@ -966,6 +967,7 @@ function ShowActionListEditor($actions, $day=NULL, $pageid = NULL, $dayview) {
     $HeaderText = "$day-$month-$year&nbsp;&nbsp;$BackToMonthLink";
   }
 $leptoken = (isset($_GET['leptoken'])) ? $_GET['leptoken'] : "";
+if(isset($_GET["amp;leptoken"])) $leptoken = $_GET["amp;leptoken"];
   ?>
 <div class="actionlist">
   <h2><?php echo $HeaderText; ?></h2>
